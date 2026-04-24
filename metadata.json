@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Doc2Latex/HTML",
+  "description": "Convert Word and PDF documents into clean LaTeX and HTML with embedded images using Gemini AI's multimodal capabilities.",
+  "requestFramePermissions": []
+}
