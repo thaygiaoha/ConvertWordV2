@@ -49,7 +49,12 @@ export const convertToLatexHtml = async (
    - Nếu bản gốc là "A.", "B.", "C.", "D.", "a)", "b)", "c)", "d)" bình thường (không gạch chân) -> Tuyệt đối không thêm \underline{}.
    - Ví dụ: 
    + Nếu chỉ chữ A được gạch chân thì gõ \underline{A}. các phương án còn lại B, C, D giữ nguyên không bọc gì cả.
-   + Nếu chữ a được gạch chân thì gõ \underline{a}, các phương án còn lại b, c, d nếu không gạch chân thì giữ nguyên không bọc gì cả (câu hỏi dạng này có thể gạch chân nhiều ý nên cần đặc biệt thật kỹ đấy).
+   + Nếu chữ a được gạch chân thì gõ \underline{a}, các phương án còn lại b, c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Nếu chữ b được gạch chân thì gõ \underline{b}, các phương án còn lại a, c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Nếu chữ c được gạch chân thì gõ \underline{c}, các phương án còn lại a, b, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Nếu chữ d được gạch chân thì gõ \underline{d}, các phương án còn lại a, b, c nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Nếu chữ a, b được gạch chân thì gõ \underline{a}, \underline{b} các phương án còn lại c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Với quy tắc tương tự  như các ví dụ trên. 
    - Không sử dụng \textbf{} hoặc bất kỳ định dạng làm đậm nào cho các chữ cái đầu mục.
    - Giữ nguyên xuống dòng y hệt bản gốc, không tự ý thêm ký tự \n vào chuỗi kết quả.
    - Gõ lại y nguyên toàn bộ văn bản (trừ Header và Footer), giữ đúng vị trí và định dạng như bản gốc.
