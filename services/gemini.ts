@@ -40,22 +40,24 @@ export const convertToLatexHtml = async (
    - Đảm bảo các ký hiệu toán học gõ chuẩn LaTeX (ví dụ: \\frac, \\sqrt, \\alpha...).
    - Toàn bộ các điểm (A, B, C, M, N, P...), các ký hiệu toán học trong văn bản PHẢI được bọc trong $...$ (ví dụ: $A$, $B$, $x$, $y$).
    - Các số nguyên độc lập được bọc trong $...$ (ví dụ: $3$, $2026$), các số thập phân dùng dấu phẩy phải bọc trong $...$ (ví dụ: $2,7$, $6,2$), các số thập phân dùng dấu chấm thì giữ nguyên dạng văn bản (ví dụ: 2.5 vẫn gõ lại 2.5, không bọc $...$).
-   - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.   
-   - Quan trọng thứ nhất: Khi thấy gạch chân các chữ cái in hoa A., B., C., D. (sau các chữ này là dấu chấm(.)), hãy dùng lệnh \underline{...} trong LaTeX với đúng các chữ cái in hoa đó (ví dụ \underline{A}).
-   - Quan trọng thứ nhai: Khi thấy gạch chân các chữ cái thường a), b), c), d) (sau các chữ này là dấu ngoặc đơn đóng )),  hãy dùng lệnh \underline{...} trong LaTeX với đúng các chữ cái in thường đó (ví dụ \underline{c}).
-   - Quan trọng thứ ba: tuyệt đối không dùng lệnh \underline{...} trong LaTeX với các văn bản không được gạch chân.   
-   - Hãy giữ nguyên định dạng GẠCH CHÂN khi thực hiện TẢI WORD(KÈM ẢNH)  
-   - Còn lại không bọc bất kỳ văn bản nào, đặc biệt không dùng \textbf{...} để bọc nhé. 
-
+   - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.  
 2. VỚI HÌNH ẢNH:
    - Hãy bỏ qua khi thấy hình vẽ, đồ thị, bảng biến thiên, hoặc bảng số liệu (tức là không gõ lại, không lưu lại hình ảnh, đồ thị, bảng biểu, biểu đồ, bảng biến thiên đó) .
-   3. CẤU TRÚC VĂN BẢN:
+3. QUY TẮC GẠCH CHÂN (QUAN TRỌNG NHẤT):
+   - Mặc định: KHÔNG gạch chân bất kỳ chữ cái nào.
+   - Điều kiện dùng \underline{}: CHỈ khi văn bản gốc có gạch chân thực sự ở các đầu mục (ví dụ: gạch chân chữ cái để chọn đáp án đúng).
+   - Ví dụ logic: 
+     + Gốc "a) " (không gạch) => Gõ "a) "
+     + Gốc "a) " (có gạch dưới chữ a) => Gõ "\underline{a}) "
+     + Gốc "A. " (có gạch dưới chữ A) => Gõ "\underline{A}. "
+   - Tuyệt đối không dùng \underline{} cho toàn bộ danh sách nếu chỉ có một mục được gạch hoặc không có mục nào được gạch.
+4. CẤU TRÚC VĂN BẢN:
    - Gõ lại y nguyên toàn bộ văn bản (trừ Header và Footer), giữ đúng vị trí và định dạng như bản gốc.
    - Giữ nguyên Câu 1, Câu 2... và các phương án A, B, C, D; 
    - Nếu ngay sau Câu 1, Câu 2,... có các thẻ [...] thì gõ lại y nguyên (Ví dụ: Câu 1. [1001.a] thì giữ nguyên Câu 1. [1001.a])
    - Quan trọng : Khi gặp thẻ dạng <key=...> thì gõ lại văn bản y nguyên nhé, không bọc số trong $...& (Ví dụ: gõ lại y giữ nguyên <key=2.5>)
-   - Khi thực hiện lệnh TẢI WORD(KÈM ẢNH) thì file word nhận được về cấu trúc và hình thức giống hệt file gốc, chú ý giữ nguyên gạch chân, xuống dòng, không dùng \n nhé
-
+   - Các đoạn văn bản xuống dòng bạn gõ thông thường, không dùng lệnh \n nhé.
+   - Còn lại không bọc bất kỳ văn bản nào, đặc biệt không dùng \textbf{...} để bọc nhé. 
 Trả về JSON theo schema cung cấp.`,
       responseMimeType: "application/json",
       responseSchema: {
