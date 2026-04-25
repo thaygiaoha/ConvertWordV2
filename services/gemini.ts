@@ -43,20 +43,17 @@ export const convertToLatexHtml = async (
    - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.  
 2. VỚI HÌNH ẢNH:
    - Hãy bỏ qua khi thấy hình vẽ, đồ thị, bảng biến thiên, hoặc bảng số liệu (tức là không gõ lại, không lưu lại hình ảnh, đồ thị, bảng biểu, biểu đồ, bảng biến thiên đó) .
-3. QUY TẮC GẠCH CHÂN (QUAN TRỌNG NHẤT):
-   - Mặc định: KHÔNG gạch chân bất kỳ chữ cái nào.
-   - Điều kiện dùng \underline{}: CHỈ khi văn bản gốc có gạch chân thực sự ở các đầu mục (ví dụ: gạch chân chữ cái để chọn đáp án đúng).
-   - Ví dụ logic: 
-     + Gốc "a) " (không gạch) => Gõ "a) "
-     + Gốc "a) " (có gạch dưới chữ a) => Gõ "\underline{a}) "
-     + Gốc "A. " (có gạch dưới chữ A) => Gõ "\underline{A}. "
-   - Tuyệt đối không dùng \underline{} cho toàn bộ danh sách nếu chỉ có một mục được gạch hoặc không có mục nào được gạch.
-4. CẤU TRÚC VĂN BẢN:
+3. QUY TẮC ĐỊNH DẠNG ĐẶC BIỆT:
+   - Mặc định: KHÔNG dùng lệnh \underline{} cho bất kỳ văn bản nào.
+   - Lệnh \underline{...} CHỈ được sử dụng nếu và chỉ nếu trong hình ảnh gốc chữ cái đó ĐƯỢC GẠCH CHÂN thủ công (thường để đánh dấu đáp án đúng). 
+   - Nếu bản gốc là "A.", "B.", "C.", "D.", "a)", "b)", "c)", "d)" bình thường (không gạch chân) -> Tuyệt đối không thêm \underline{}.
+   - Ví dụ: Nếu chỉ chữ A được gạch chân thì gõ \underline{A}. các phương án còn lại B, C, D giữ nguyên không bọc gì cả.
+   - Không sử dụng \textbf{} hoặc bất kỳ định dạng làm đậm nào cho các chữ cái đầu mục.
+   - Giữ nguyên xuống dòng y hệt bản gốc, không tự ý thêm ký tự \n vào chuỗi kết quả.
    - Gõ lại y nguyên toàn bộ văn bản (trừ Header và Footer), giữ đúng vị trí và định dạng như bản gốc.
    - Giữ nguyên Câu 1, Câu 2... và các phương án A, B, C, D; 
    - Nếu ngay sau Câu 1, Câu 2,... có các thẻ [...] thì gõ lại y nguyên (Ví dụ: Câu 1. [1001.a] thì giữ nguyên Câu 1. [1001.a])
-   - Quan trọng : Khi gặp thẻ dạng <key=...> thì gõ lại văn bản y nguyên nhé, không bọc số trong $...& (Ví dụ: gõ lại y giữ nguyên <key=2.5>)
-   - Các đoạn văn bản xuống dòng bạn gõ thông thường, không dùng lệnh \n nhé.
+   - Quan trọng : Khi gặp thẻ dạng <key=...> thì gõ lại văn bản y nguyên nhé, không bọc số trong $...& (Ví dụ: gõ lại y giữ nguyên <key=2.5>)  
    - Còn lại không bọc bất kỳ văn bản nào, đặc biệt không dùng \textbf{...} để bọc nhé. 
 Trả về JSON theo schema cung cấp.`,
       responseMimeType: "application/json",
