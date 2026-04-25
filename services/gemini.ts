@@ -46,7 +46,7 @@ export const convertToLatexHtml = async (
 3. QUY TẮC ĐỊNH DẠNG ĐẶC BIỆT:
    - Mặc định: KHÔNG dùng lệnh \\underline{} cho bất kỳ văn bản nào.
    - Lệnh \underline{...} CHỈ được sử dụng nếu và chỉ nếu trong hình ảnh gốc chữ cái đó ĐƯỢC GẠCH CHÂN thủ công (thường để đánh dấu đáp án đúng). 
-   - Nếu bản gốc là "A.", "B.", "C.", "D.", "a)", "b)", "c)", "d)" bình thường (không gạch chân) -> Tuyệt đối không thêm \underline{}.
+   - Nếu bản gốc là A., B., C., D., a), b), c), d) bình thường (không gạch chân) -> Tuyệt đối không thêm \underline{}.
    - Ví dụ: 
    + Nếu chỉ chữ A được gạch chân thì gõ \\underline{A}. các phương án còn lại B, C, D giữ nguyên không bọc gì cả.
    + Nếu chữ a được gạch chân thì gõ \\underline{a}, các phương án còn lại b, c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
