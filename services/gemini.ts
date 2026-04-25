@@ -41,8 +41,9 @@ export const convertToLatexHtml = async (
    - Toàn bộ các điểm (A, B, C, M, N, P...), các ký hiệu toán học trong văn bản PHẢI được bọc trong $...$ (ví dụ: $A$, $B$, $x$, $y$).
    - Các số nguyên độc lập được bọc trong $...$ (ví dụ: $3$, $2026$), các số thập phân dùng dấu phẩy phải bọc trong $...$ (ví dụ: $2,7$, $6,2$), các số thập phân dùng dấu chấm thì giữ nguyên dạng văn bản (ví dụ: 2.5 vẫn gõ lại 2.5, không bọc $...$).
    - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.   
-   - Quan trọng: Hãy dùng lệnh \\underline{...} trong LaTeX với đúng phần văn bản kiểu A. hoặc B. hoặc C. hoặc D. hoặc a) hoặc b) hoặc c) hoặc d) được gạch chân (có thể không gạch chân dấu chấm hoặc dấu ngoặc đóng, ví dụ \\underline{A}, \\underline{c} )
-   - Phần văn bản nào không gạch chân tuyệt đối không dùng lệnh \\underline{...} trong LaTeX .
+   - Quan trọng thứ nhất: Khi thấy gạch chân các chữ cái in hoa A., B., C., D. (sau các chữ này là dấu chấm(.)), hãy dùng lệnh \underline{...} trong LaTeX với đúng các chữ cái in hoa đó (ví dụ \underline{A}).
+   - Quan trọng thứ nhai: Khi thấy gạch chân các chữ cái thường a), b), c), d) (sau các chữ này là dấu ngoặc đơn đóng )),  hãy dùng lệnh \underline{...} trong LaTeX với đúng các chữ cái in thường đó (ví dụ \underline{c}).
+   - Quan trọng thứ ba: tuyệt đối không dùng lệnh \underline{...} trong LaTeX với các văn bản không được gạch chân.   
    - Hãy giữ nguyên định dạng GẠCH CHÂN khi thực hiện TẢI WORD(KÈM ẢNH)  
    - Còn lại không bọc bất kỳ văn bản nào, đặc biệt không dùng \textbf{...} để bọc nhé. 
 
