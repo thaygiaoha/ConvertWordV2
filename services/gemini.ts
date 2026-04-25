@@ -44,16 +44,16 @@ export const convertToLatexHtml = async (
 2. VỚI HÌNH ẢNH:
    - Hãy bỏ qua khi thấy hình vẽ, đồ thị, bảng biến thiên, hoặc bảng số liệu (tức là không gõ lại, không lưu lại hình ảnh, đồ thị, bảng biểu, biểu đồ, bảng biến thiên đó) .
 3. QUY TẮC ĐỊNH DẠNG ĐẶC BIỆT:
-   - Mặc định: KHÔNG dùng lệnh \underline{} cho bất kỳ văn bản nào.
+   - Mặc định: KHÔNG dùng lệnh \\underline{} cho bất kỳ văn bản nào.
    - Lệnh \underline{...} CHỈ được sử dụng nếu và chỉ nếu trong hình ảnh gốc chữ cái đó ĐƯỢC GẠCH CHÂN thủ công (thường để đánh dấu đáp án đúng). 
    - Nếu bản gốc là "A.", "B.", "C.", "D.", "a)", "b)", "c)", "d)" bình thường (không gạch chân) -> Tuyệt đối không thêm \underline{}.
    - Ví dụ: 
-   + Nếu chỉ chữ A được gạch chân thì gõ \underline{A}. các phương án còn lại B, C, D giữ nguyên không bọc gì cả.
-   + Nếu chữ a được gạch chân thì gõ \underline{a}, các phương án còn lại b, c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
-   + Nếu chữ b được gạch chân thì gõ \underline{b}, các phương án còn lại a, c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
-   + Nếu chữ c được gạch chân thì gõ \underline{c}, các phương án còn lại a, b, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
-   + Nếu chữ d được gạch chân thì gõ \underline{d}, các phương án còn lại a, b, c nếu không gạch chân thì giữ nguyên không bọc gì cả.
-   + Nếu chữ a, b được gạch chân thì gõ \underline{a}, \underline{b} các phương án còn lại c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Nếu chỉ chữ A được gạch chân thì gõ \\underline{A}. các phương án còn lại B, C, D giữ nguyên không bọc gì cả.
+   + Nếu chữ a được gạch chân thì gõ \\underline{a}, các phương án còn lại b, c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Nếu chữ b được gạch chân thì gõ \\underline{b}, các phương án còn lại a, c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Nếu chữ c được gạch chân thì gõ \\underline{c}, các phương án còn lại a, b, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Nếu chữ d được gạch chân thì gõ \\underline{d}, các phương án còn lại a, b, c nếu không gạch chân thì giữ nguyên không bọc gì cả.
+   + Nếu chữ a, b được gạch chân thì gõ \\underline{a}, \\underline{b} các phương án còn lại c, d nếu không gạch chân thì giữ nguyên không bọc gì cả.
    + Với quy tắc tương tự  như các ví dụ trên. 
    - Không sử dụng \textbf{} hoặc bất kỳ định dạng làm đậm nào cho các chữ cái đầu mục.
    - Giữ nguyên xuống dòng y hệt bản gốc, không tự ý thêm ký tự \n vào chuỗi kết quả.
