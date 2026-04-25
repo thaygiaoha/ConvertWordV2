@@ -40,20 +40,21 @@ export const convertToLatexHtml = async (
    - Đảm bảo các ký hiệu toán học gõ chuẩn LaTeX (ví dụ: \\frac, \\sqrt, \\alpha...).
    - Toàn bộ các điểm (A, B, C, M, N, P...), các ký hiệu toán học trong văn bản PHẢI được bọc trong $...$ (ví dụ: $A$, $B$, $x$, $y$).
    - Các số nguyên độc lập được bọc trong $...$ (ví dụ: $3$, $2026$), các số thập phân dùng dấu phẩy phải bọc trong $...$ (ví dụ: $2,7$, $6,2$), các số thập phân dùng dấu chấm thì giữ nguyên dạng văn bản (ví dụ: 2.5 vẫn gõ lại 2.5, không bọc $...$).
-   - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.   
+   - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.      
+2. Quy tắc gạch chân: 
+   - TUYỆT ĐỐI KHÔNG dùng \\underline{...} nếu bản gốc không có. CHỈ dùng khi thấy ký tự đầu mục được gạch chân (ví dụ: gốc có a) chữ a có gạch chân thì ghi \\underline{a}), gốc có a) bình thường thì ghi a)).
+   Cụ thể:
    - Quan trọng: Hãy dùng lệnh \\underline{...} trong LaTeX với đúng phần văn bản kiểu A. hoặc B. hoặc C. hoặc D. hoặc a) hoặc b) hoặc c) hoặc d) được gạch chân (có thể không gạch chân dấu chấm hoặc dấu ngoặc đóng, ví dụ \\underline{A}, \\underline{c} )
    - Phần văn bản nào không gạch chân tuyệt đối không dùng lệnh \\underline{...} trong LaTeX .
-   - Hãy giữ nguyên định dạng GẠCH CHÂN khi thực hiện TẢI WORD(KÈM ẢNH)  
-   - Còn lại không bọc bất kỳ văn bản nào, đặc biệt không dùng \textbf{...} để bọc nhé. 
-
-2. VỚI HÌNH ẢNH:
+3. VỚI HÌNH ẢNH:
    - Hãy bỏ qua khi thấy hình vẽ, đồ thị, bảng biến thiên, hoặc bảng số liệu (tức là không gõ lại, không lưu lại hình ảnh, đồ thị, bảng biểu, biểu đồ, bảng biến thiên đó) .
-   3. CẤU TRÚC VĂN BẢN:
+4. CẤU TRÚC VĂN BẢN:
    - Gõ lại y nguyên toàn bộ văn bản (trừ Header và Footer), giữ đúng vị trí và định dạng như bản gốc.
    - Giữ nguyên Câu 1, Câu 2... và các phương án A, B, C, D; 
    - Nếu ngay sau Câu 1, Câu 2,... có các thẻ [...] thì gõ lại y nguyên (Ví dụ: Câu 1. [1001.a] thì giữ nguyên Câu 1. [1001.a])
    - Quan trọng : Khi gặp thẻ dạng <key=...> thì gõ lại văn bản y nguyên nhé, không bọc số trong $...& (Ví dụ: gõ lại y giữ nguyên <key=2.5>)
-   - Khi thực hiện lệnh TẢI WORD(KÈM ẢNH) thì file word nhận được về cấu trúc và hình thức giống hệt file gốc, chú ý giữ nguyên gạch chân, xuống dòng, không dùng \n nhé
+   - Còn lại không bọc bất kỳ văn bản nào, đặc biệt không dùng \textbf{...} để bọc nhé. 
+   - Xuống dòng gõ bình thường, không dùng \n nhé
 
 Trả về JSON theo schema cung cấp.`,
       responseMimeType: "application/json",
