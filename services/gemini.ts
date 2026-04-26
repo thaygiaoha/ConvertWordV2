@@ -42,9 +42,7 @@ export const convertToLatexHtml = async (
    - Các số nguyên độc lập được bọc trong $...$ (ví dụ: $3$, $2026$), các số thập phân dùng dấu phẩy phải bọc trong $...$ (ví dụ: $2,7$, $6,2$), các số thập phân dùng dấu chấm thì giữ nguyên dạng văn bản (ví dụ: 2.5 vẫn gõ lại 2.5, không bọc $...$).
    - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.      
 2. Quy tắc gạch chân: 
-   - TUYỆT ĐỐI KHÔNG dùng \\underline{...} nếu bản gốc không có. CHỈ dùng khi thấy ký tự đầu mục được gạch chân (ví dụ: gốc có a) chữ a có gạch chân thì ghi \\underline{a}), gốc có a) bình thường thì ghi a)).
-   Cụ thể:
-   - Quan trọng: Hãy dùng lệnh \\underline{...} trong LaTeX với đúng phần văn bản kiểu A. hoặc B. hoặc C. hoặc D. hoặc a) hoặc b) hoặc c) hoặc d) được gạch chân (có thể không gạch chân dấu chấm hoặc dấu ngoặc đóng, ví dụ \\underline{A}, \\underline{c} )
+   - Khi gặp văn bản là một chữ cái A., B., C., D., a), b), c), d),... và có gạch chân thì dùng lệnh \\underline{...} trong LaTeX để bọc chữ cái đó nếu bản gốc không có, KHÔNG có gạch chân tuyệt đối không dùng lệnh \\underline{...} trong LaTeX để bọc.  
    - Phần văn bản nào không gạch chân tuyệt đối không dùng lệnh \\underline{...} trong LaTeX .
 3. VỚI HÌNH ẢNH:
    - Hãy bỏ qua khi thấy hình vẽ, đồ thị, bảng biến thiên, hoặc bảng số liệu (tức là không gõ lại, không lưu lại hình ảnh, đồ thị, bảng biểu, biểu đồ, bảng biến thiên đó) .
