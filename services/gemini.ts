@@ -78,6 +78,7 @@ Trả về JSON theo schema cung cấp.`,
         required: ["latex", "html"]
       },
       temperature: 0,
+      maxOutputTokens: 8192,
     }
   });
 
