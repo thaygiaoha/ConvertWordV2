@@ -38,11 +38,12 @@ export const convertToLatexHtml = async (
    - Các số nguyên sau chữ câu (ví dụ: Câu 1.) hoặc sau chữ bài (ví dụ: Bài 5.) hoặc sau chữ ví dụ (ví dụ: Ví dụ 7.) không bọc trong $...$ mà gõ lại y nguyên nhé.
    - Sử dụng $...$ cho công thức nội dòng (inline) và \\[...\\] cho công thức khối (block).
    - Đảm bảo các ký hiệu toán học gõ chuẩn LaTeX (ví dụ: \\frac, \\sqrt, \\alpha...).
+   - Kí hiệu song song thì gõ trực tiếp // kèm theo dấu cách 2 bên (ví dụ: a // b)
    - Toàn bộ các điểm (A, B, C, M, N, P...), các ký hiệu toán học trong văn bản PHẢI được bọc trong $...$ (ví dụ: $A$, $B$, $x$, $y$).
    - Các số nguyên độc lập được bọc trong $...$ (ví dụ: $3$, $2026$), các số thập phân dùng dấu phẩy phải bọc trong $...$ (ví dụ: $2,7$, $6,2$), các số thập phân dùng dấu chấm thì giữ nguyên dạng văn bản (ví dụ: 2.5 vẫn gõ lại 2.5, không bọc $...$).
    - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.      
 3. VỚI HÌNH ẢNH:
-   - Hãy bỏ qua khi thấy hình vẽ, đồ thị, bảng biến thiên, hoặc bảng số liệu (tức là không gõ lại, không lưu lại hình ảnh, đồ thị, bảng biểu, biểu đồ, bảng biến thiên đó) .
+   - Chỉ quan tâm đến phần văn bản, bỏ qua phần hình vẽ, biểu đồ, đồ thị, bảng biểu.
 4. CẤU TRÚC VĂN BẢN:
    - Gõ lại y nguyên toàn bộ văn bản, Header và Footer không gõ lại nhé (bỏ qua), giữ đúng vị trí và định dạng như bản gốc.
    - Giữ nguyên Câu 1, Câu 2... và các phương án A, B, C, D; 
