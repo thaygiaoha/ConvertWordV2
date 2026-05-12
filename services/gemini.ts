@@ -44,6 +44,7 @@ export const convertToLatexHtml = async (
    - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.      
 3. VỚI HÌNH ẢNH:
    - Chỉ quan tâm đến phần văn bản, bỏ qua phần hình vẽ, biểu đồ, đồ thị, bảng biểu.
+   - Các tag (anh) là văn bản, hãy gõ lại y nguyên, KHÔNG chuyển nó sang ảnh nhé.
 4. CẤU TRÚC VĂN BẢN:
    - Gõ lại y nguyên toàn bộ văn bản, Header và Footer không gõ lại nhé (bỏ qua), giữ đúng vị trí và định dạng như bản gốc.
    - Giữ nguyên Câu 1, Câu 2... và các phương án A, B, C, D; 
