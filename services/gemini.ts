@@ -37,15 +37,24 @@ export const convertToLatexHtml = async (
    - Tự động xuống dòng giống văn bản gốc , tuyệt đối không dùng lệnh \n.
    - Các số nguyên sau chữ câu (ví dụ: Câu 1.) hoặc sau chữ bài (ví dụ: Bài 5.) hoặc sau chữ ví dụ (ví dụ: Ví dụ 7.) không bọc trong $...$ mà gõ lại y nguyên nhé.
    - Sử dụng $...$ cho công thức nội dòng (inline) và \\[...\\] cho công thức khối (block).
+   - Với tọa độ của điểm, tọa độ véctơ phải đảm bảo các tọa độ được bọc trong (...) (ví dụ A(1, 2), B(-3, 2, 4)).
    - Đảm bảo các ký hiệu toán học gõ chuẩn LaTeX (ví dụ: \\frac, \\sqrt, \\alpha...).
-   - Kí hiệu song song thì gõ trực tiếp // kèm theo dấu cách 2 bên (ví dụ: a // b)
    - Toàn bộ các điểm (A, B, C, M, N, P...), các ký hiệu toán học trong văn bản PHẢI được bọc trong $...$ (ví dụ: $A$, $B$, $x$, $y$).
    - Các số nguyên độc lập được bọc trong $...$ (ví dụ: $3$, $2026$), các số thập phân dùng dấu phẩy phải bọc trong $...$ (ví dụ: $2,7$, $6,2$), các số thập phân dùng dấu chấm thì giữ nguyên dạng văn bản (ví dụ: 2.5 vẫn gõ lại 2.5, không bọc $...$).
-   - Hệ phương trình dùng \\begin{cases}. Ký hiệu độ dùng ^\\circ.      
-3. VỚI HÌNH ẢNH:
-   - Chỉ quan tâm đến phần văn bản, bỏ qua phần hình vẽ, biểu đồ, đồ thị, bảng biểu.
-   - Các tag (anh) là văn bản, hãy gõ lại y nguyên, KHÔNG chuyển nó sang ảnh nhé.
-4. CẤU TRÚC VĂN BẢN:
+   - Với giới hạn của hàm số thì dùng \lim\limits (ví dụ: \lim\limits_{x \to 2})
+   - Với kí hiệu song song (//) thì gõ trực tiếp , KHÔNG dùng lệnh \\parallel ( Ví dụ: $AB // CD$).
+   - Hệ phương trình dùng \\begin{cases}...\\end{cases}. 
+   - Ký hiệu độ dùng ^\\circ.   
+   - Hãy gặp văn bản \\underline{...} thì gõ lại nguyên văn văn bản đó, không được bỏ dấu chấm hay dấu đóng ngoặc đơn ngay sau nó (ví dụ: \\underline{A}. hay \\underline{a})).
+   - Với kí hiệu tương đương(<=>) thì dùng \\Leftrightarrow, với kí hiệu suy ra(=>) thì dùng \\Rightarrow
+   - Còn lại không bọc bất kỳ văn bản nào, đặc biệt không dùng \textbf{...} để bọc nhé.
+   - Các tập hợp đặc biệt KHÔNG dùng \left và right\ nhé. 
+   - Kiểm tra lại một lần nữa và bọc thêm $ nếu thiếu (ví dụ "2024 \\cos 2x - 2025 = 0$." cần sửa lại thành "$2024 \\cos 2x - 2025 = 0$.")
+
+2. NHẬN DIỆN VÀ CẮT HÌNH (QUAN TRỌNG):
+   - Khi thấy hình vẽ, đồ thị, biểu đồ, bảng biểu, bảng số liệu thì KHÔNG gõ lại phần đó, mà thay vào đó cụm từ (anh).
+   - Cụm từ (anh) (nếu có nhé) là văn bản CHỨ không phải là ẢNH, đề nghị gõ lại nguyên văn và KHÔNG gạch chân.
+3. CẤU TRÚC VĂN BẢN:
    - Gõ lại y nguyên toàn bộ văn bản, Header và Footer không gõ lại nhé (bỏ qua), giữ đúng vị trí và định dạng như bản gốc.
    - Giữ nguyên Câu 1, Câu 2... và các phương án A, B, C, D; 
    - Nếu ngay sau Câu 1, Câu 2,... có các thẻ [...] thì gõ lại y nguyên (Ví dụ: Câu 1. [1001.a] thì giữ nguyên Câu 1. [1001.a])
