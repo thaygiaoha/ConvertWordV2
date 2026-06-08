@@ -43,12 +43,13 @@ export const convertToLatexHtml = async (
    - Các số nguyên độc lập được bọc trong $...$ (ví dụ: $3$, $2026$), các số thập phân dùng dấu phẩy phải bọc trong $...$ (ví dụ: $2,7$, $6,2$), các số thập phân dùng dấu chấm thì giữ nguyên dạng văn bản (ví dụ: 2.5 vẫn gõ lại 2.5, không bọc $...$).
    - Với giới hạn của hàm số thì dùng \lim\limits (ví dụ: \lim\limits_{x \to 2})
    - Với kí hiệu song song (//) thì gõ trực tiếp , KHÔNG dùng lệnh \\parallel ( Ví dụ: $AB // CD$).
-   - Hệ phương trình dùng \\begin{cases}...\\end{cases}. 
-   - Ký hiệu độ dùng ^\\circ.   
+   - Hệ phương trình dùng \\begin{cases}...\\end{cases}, ma trận: $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$.
+   - Ký hiệu độ dùng ^\\circ, một số ký hiệu phổ biến khác : $\\geq$  $\\leq$  $\\infty$  $\\in$  $\\cup$  $\\cap$.    
    - Hãy gặp văn bản \\underline{...} thì gõ lại nguyên văn văn bản đó, không được bỏ dấu chấm hay dấu đóng ngoặc đơn ngay sau nó (ví dụ: \\underline{A}. hay \\underline{a})).
    - Với kí hiệu tương đương(<=>) thì dùng \\Leftrightarrow, với kí hiệu suy ra(=>) thì dùng \\Rightarrow
    - Còn lại không bọc bất kỳ văn bản nào, đặc biệt không dùng \textbf{...} để bọc nhé.
    - Các tập hợp đặc biệt KHÔNG dùng \left và right\ nhé. 
+   - Tuyệt đối không tự ý bỏ qua hoặc lược bớt bất kỳ ký hiệu toán học nào.
    - Kiểm tra lại một lần nữa và bọc thêm $ nếu thiếu (ví dụ "2024 \\cos 2x - 2025 = 0$." cần sửa lại thành "$2024 \\cos 2x - 2025 = 0$.")
 
 2. NHẬN DIỆN VÀ CẮT HÌNH (QUAN TRỌNG):
