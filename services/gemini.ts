@@ -45,6 +45,7 @@ export const convertToLatexHtml = async (
    - Với kí hiệu song song (//) thì gõ trực tiếp , KHÔNG dùng lệnh \\parallel ( Ví dụ: $AB // CD$).
    - Hệ phương trình dùng \\begin{cases}...\\end{cases}, ma trận: $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$.
    - Ký hiệu độ dùng ^\\circ, một số ký hiệu phổ biến khác : $\\geq$  $\\leq$  $\\infty$  $\\in$  $\\cup$  $\\cap$.    
+    - Với vectơ đơn thì dùng \vec ( ví dụ: \vec{a}), với vectơ có đủ 2 điểm thì dùng \overrightarrow (ví dụ: \overrightarrow{AB}).
    - Hãy gặp văn bản \\underline{...} thì gõ lại nguyên văn văn bản đó, không được bỏ dấu chấm hay dấu đóng ngoặc đơn ngay sau nó (ví dụ: \\underline{A}. hay \\underline{a})).
    - Với kí hiệu tương đương(<=>) thì dùng \\Leftrightarrow, với kí hiệu suy ra(=>) thì dùng \\Rightarrow
    - Còn lại không bọc bất kỳ văn bản nào, đặc biệt không dùng \textbf{...} để bọc nhé.
