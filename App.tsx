@@ -502,7 +502,7 @@ End Sub`;
         {viewCount !== null && (
           <div className="flex items-center justify-center gap-2 mt-4 text-slate-300 text-xs font-semibold tracking-wider">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
-            <span>Lượt truy cập: {viewCount.toLocaleString()}</span>
+            <span>Lượt truy cập: {(viewCount ?? 0).toLocaleString()}</span>
           </div>
         )}
       </footer>
