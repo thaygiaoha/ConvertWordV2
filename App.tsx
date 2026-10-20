@@ -23,29 +23,34 @@ const App: React.FC = () => {
     // 1. Thêm state lưu lượt truy cập
   const [viewCount, setViewCount] = useState<number | null>(null);
 
- // 2. Thêm useEffect này để đếm theo phiên và tối ưu tốc độ F5 cực mượt
-  useEffect(() => {
-    const namespace = "mathdigitizer_smartcrop"; 
-    const key = "visits";
-    
-    // Tìm xem trong Tab này đã lưu con số nào chưa
-    const savedCount = sessionStorage.getItem('mathdigitizer_viewCount');
+// 2. Thêm useEffect này để đếm theo phiên và tối ưu tốc độ F5 cực mượt (đã vá lỗi chống sập)
+useEffect(() => {
+  const namespace = "mathdigitizer_smartcrop"; 
+  const key = "visits";
+  
+  // Tìm xem trong Tab này đã lưu con số nào chưa
+  const savedCount = sessionStorage.getItem('mathdigitizer_viewCount');
 
-    if (savedCount) {
-      // NẾU ĐÃ CÓ (Khách bấm F5): Lấy thẳng số cũ ra hiện, KHÔNG cần gọi mạng nữa! 
-      setViewCount(parseInt(savedCount, 10));
-    } else {
-      // MỞ TAB LẦN ĐẦU (hoặc tắt đi vào lại): Gọi API để CỘNG 1
-      fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
-        .then(res => res.json())
-        .then(data => {
-          setViewCount(data.count); // Hiện số mới lên web
-          // Tiện tay cất luôn con số này vào bộ nhớ Tab để nhỡ có F5 thì mang ra dùng
-          sessionStorage.setItem('mathdigitizer_viewCount', data.count.toString()); 
-        })
-        .catch(err => console.error("Lỗi đếm truy cập:", err));
-    }
-  }, []);
+  if (savedCount) {
+    // NẾU ĐÃ CÓ (Khách bấm F5): Lấy thẳng số cũ ra hiện, KHÔNG cần gọi mạng nữa! 
+    setViewCount(parseInt(savedCount, 10));
+  } else {
+    // MỞ TAB LẦN ĐẦU: Gọi API
+    fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
+      .then(res => res.json())
+      .then(data => {
+        // An toàn hóa dữ liệu: Nếu API trả về linh tinh hoặc lỗi, lấy mặc định là 0
+        const currentCount = Number(data?.count ?? 0);
+        setViewCount(currentCount);
+        sessionStorage.setItem('mathdigitizer_viewCount', currentCount.toString()); 
+      })
+      .catch(err => {
+        console.error("Lỗi đếm truy cập:", err);
+        // Khi API tạch vĩnh viễn, gán về 0 hoặc ẩn đi để app không bị treo
+        setViewCount(0);
+      });
+  }
+}, []);
 
   const handleSaveKey = (e: React.FormEvent) => {
     e.preventDefault();
